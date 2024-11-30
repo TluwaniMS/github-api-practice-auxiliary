@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Check if do-as-you-please directory exists, create it if it doesn't
-if [ ! -d "do-as-you-please" ]; then
-    mkdir do-as-you-please
-    echo "Created directory: do-as-you-please"
+# Check if static-files directory exists, create it if it doesn't
+if [ ! -d "static-files" ]; then
+    mkdir static-files
+    echo "Created directory: static-files"
 fi
 
 # Array of filenames
@@ -22,9 +22,9 @@ files=(
     "doring-app-prod.yml"
 )
 
-# Create files in the do-as-you-please directory
+# Create files in the static-files directory
 for filename in "${files[@]}"; do
-    filepath="do-as-you-please/$filename"
+    filepath="static-files/$filename"
     if [ ! -f "$filepath" ]; then
         touch "$filepath"
         echo "Created file: $filepath"
